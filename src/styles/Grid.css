@@ -1,0 +1,8 @@
+tr { display: block; float: left; }
+th, td { display: block }
+
+table {
+    transform: rotate(180deg);
+    border-collapse: collapse;
+    margin: 0 auto;
+}
