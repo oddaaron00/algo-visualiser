@@ -14,6 +14,10 @@ export default function Cell({ size, state, position, onClick }: i.Cell) {
             break;
         }
         case i.State.Current: {
+            style = { 'backgroundColor': '#7FDBFF' };
+            break;
+        }
+        case i.State.CurrentMin: {
             style = { 'backgroundColor': '#FF4136' };
             break;
         }

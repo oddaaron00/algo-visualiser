@@ -3,6 +3,7 @@ export enum State {
     Filled = 1,
     Current = 2,
     Sorted = 3,
+    CurrentMin = 4,
 }
 
 export interface Cell {
