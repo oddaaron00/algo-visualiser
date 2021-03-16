@@ -8,7 +8,7 @@ export default function Grid({ cellSize, gridHeight, gridWidth, gridArr, setGrid
     const onCellClick = (position: string[]) => {
         let a = [...gridArr];
         let b = [...stateArr];
-        console.log(a, b);
+        console.log(position);
         b[Number(position[0])] = State.Filled;
         a[Number(position[0])] = Number(position[1]) + 1;
 

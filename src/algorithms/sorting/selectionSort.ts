@@ -82,18 +82,24 @@ export default async function sort(array: number[], setArray: (newArray: number[
     const step = (i: number) => {
         let jMin = i;
         return new Promise((resolve: (value: [jMin: number, i: number]) => any) => {
-            j = i + 1;
+            j = i;
             const stepInterval = setInterval(() => {
+                console.log(i, j)
+                stateArr[j] = State.Filled;
+                setStateArr([...stateArr]);
+                j++;
+                stateArr[j] = State.Current;
+                setStateArr([...stateArr]);
+                
                 if (array[j] < array[jMin]) {
                     jMin = j;
                 }
 
-                if (j > aLength) {
+                if (j >= aLength) {
                     resolve([jMin, i]);
                     clearInterval(stepInterval);
                 }
-                j++;
-            }, 10)
+            }, 500)
         });
     }
 
