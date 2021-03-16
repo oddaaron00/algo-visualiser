@@ -7,7 +7,7 @@ import { State } from './interfaces/ICell';
 
 function App() {
 
-  let cellSize = 25;
+  let cellSize = 20;
   let gridHeight = window.innerHeight * 0.8;
   let gridWidth = window.innerWidth * 0.8;
 

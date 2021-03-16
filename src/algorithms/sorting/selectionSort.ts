@@ -12,7 +12,7 @@ export default function sort(array: number[], setArray: (newArray: number[]) => 
             console.log("STOP")
         }
         console.log(i);
-    }, 250);
+    }, 100);
 
 
     const pass = (i: number) => {
