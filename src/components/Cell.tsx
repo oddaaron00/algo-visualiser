@@ -13,6 +13,14 @@ export default function Cell({ size, state, position, onClick }: i.Cell) {
             style = { 'backgroundColor': '#0074D9' };
             break;
         }
+        case i.State.Current: {
+            style = { 'backgroundColor': '#FF4136' };
+            break;
+        }
+        case i.State.Sorted: {
+            style = { 'backgroundColor': '#FFDC00' };
+            break;
+        }
         default: {
             style = {  };
         }

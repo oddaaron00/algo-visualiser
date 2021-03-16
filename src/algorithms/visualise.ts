@@ -1,8 +1,9 @@
-import { bubbleSort } from "./sorting/bubbleSort";
+import { State } from "../interfaces/ICell";
+import selectionSort from "./sorting/selectionSort";
 
-export default function visualise(algorithm: string, array: number[], setGridArr: (newGridArr: number[]) => void) {
+export default function visualise(algorithm: string, array: number[], setGridArr: (newGridArr: number[]) => void, stateArr: State[], setStateArr: (newStateArr: State[]) => void) {
     switch (algorithm) {
-        case 'Bubble sort':
-            bubbleSort(array, setGridArr);
+        case 'Selection sort':
+            selectionSort(array, setGridArr, stateArr, setStateArr);
     }
 }

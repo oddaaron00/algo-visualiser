@@ -1,6 +1,8 @@
 export enum State {
     Empty = 0,
     Filled = 1,
+    Current = 2,
+    Sorted = 3,
 }
 
 export interface Cell {

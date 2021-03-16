@@ -3,17 +3,25 @@ import * as i from '../interfaces/IGrid';
 import { State } from '../interfaces/ICell';
 import Cell from './Cell';
 
-export default function Grid({ cellSize, gridHeight, gridWidth, gridArr, setGridArr }: i.Grid) {
+export default function Grid({ cellSize, gridHeight, gridWidth, gridArr, setGridArr, stateArr, setStateArr }: i.Grid) {
 
     const onCellClick = (position: string[]) => {
         let a = [...gridArr];
+        let b = [...stateArr];
+        console.log(a, b);
+        b[Number(position[0])] = State.Filled;
         a[Number(position[0])] = Number(position[1]) + 1;
+
+        setStateArr(b);
         setGridArr(a);
     }
 
     const resetColumn = (columnId: string) => {
         let a = [...gridArr];
+        let b = [...stateArr];
         a[Number(columnId)] = 0;
+        b[Number(columnId)] = State.Empty;
+        setStateArr(b);
         setGridArr(a);
     }
 
@@ -21,7 +29,7 @@ export default function Grid({ cellSize, gridHeight, gridWidth, gridArr, setGrid
         let column = [];
         for (let i = 0; i < Math.floor(gridHeight / cellSize); i++) {
             if (i < columnHeight) {
-                column.push(<Cell key={i} size={cellSize} state={State.Filled} position={[columnIndex, i]} onClick={onCellClick}/>);
+                column.push(<Cell key={i} size={cellSize} state={stateArr[columnIndex]} position={[columnIndex, i]} onClick={onCellClick}/>);
             } else {
                 column.push(<Cell key={i} size={cellSize} state={State.Empty} position={[columnIndex, i]} onClick={onCellClick}/>);
             }
