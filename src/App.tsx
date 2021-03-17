@@ -27,7 +27,8 @@ function App() {
     'Selection sort',
     'Insertion sort',
     'Bubble sort',
-    'Merge sort',
+    'Merge sort (top-down)',
+    'Merge sort (bottom-up)'
     //Quicksort
     //Heapsort
     //Counting sort
