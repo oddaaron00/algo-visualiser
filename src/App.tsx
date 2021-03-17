@@ -21,9 +21,19 @@ function App() {
   const [gridArr, setGridArr] = useState(initGrid());
   const [stateArr, setStateArr] = useState(initStateArr());
 
+  const [speed, setSpeed] = useState(250);
+
   const sortingAlgs = [
     'Selection sort',
-    'Quicksort'
+    'Insertion sort',
+    'Bubble sort',
+    //Merge sort
+    //Quicksort
+    //Heapsort
+    //Counting sort
+    //Radix sort
+    //Bucket sort
+    //Bogosort
   ]
 
   const [algorithm, setAlgorithm] = useState(sortingAlgs[0])
@@ -40,12 +50,12 @@ function App() {
   }
 
   const visualise = () => {
-    visualiseAlgo(algorithm, gridArr, setGridArr, stateArr, setStateArr);
+    visualiseAlgo(algorithm, gridArr, setGridArr, stateArr, setStateArr, speed);
   }
 
   return (
     <div className="App">
-      <Menu sortingAlgs={sortingAlgs} currentAlg={algorithm} setAlg={setAlgorithm} resetGrid={resetGrid} randomiseData={randomiseData} visualise={visualise}/>
+      <Menu sortingAlgs={sortingAlgs} currentAlg={algorithm} setAlg={setAlgorithm} resetGrid={resetGrid} randomiseData={randomiseData} visualise={visualise} speed={speed} setSpeed={setSpeed}/>
       <Grid cellSize={cellSize} gridHeight={gridHeight} gridWidth={gridWidth} gridArr={gridArr} setGridArr={setGridArr} stateArr={stateArr} setStateArr={setStateArr}/>
     </div>
   );

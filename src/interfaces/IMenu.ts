@@ -5,4 +5,6 @@ export interface Menu {
     resetGrid: () => void;
     randomiseData: () => void;
     visualise: () => void;
+    speed: number;
+    setSpeed: (newSpeed: number) => void;
 }
