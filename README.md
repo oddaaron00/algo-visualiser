@@ -6,3 +6,4 @@ Currently:
 - Sorting
   - Selection sort
   - Insertion sort
+  - Bubble sort
