@@ -20,9 +20,13 @@ export default async function sort(array: number[], setArray: (newArray: number[
                 if (k < iEnd) {
                     if (i < iRight && (j >= iEnd || A[i] <= A[j])) {
                         B[k] = A[i];
+                        stateArr[i] = State.Sorted;
+                        setStateArr([...stateArr]);
                         i++;
                     } else {
                         B[k] = A[j];
+                        stateArr[i] = State.Sorted;
+                        setStateArr([...stateArr]);
                         j++;
                     }
                     k++;
@@ -43,7 +47,5 @@ export default async function sort(array: number[], setArray: (newArray: number[
     let sortedArr: number[] = [];
     console.log(array, sortedArr);
     await BottomUpMergeSort(array, sortedArr, array.length);
-    stateArr.fill(State.Sorted);
-    setStateArr([...stateArr]);
     setArray([...array]);
 }
