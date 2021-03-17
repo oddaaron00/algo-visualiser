@@ -4,4 +4,4 @@ React SPA for visualising various algorithms.
 
 Currently:
 - Sorting
-- - Selection sort
+  - Selection sort
