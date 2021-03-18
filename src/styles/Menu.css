@@ -1,3 +1,18 @@
-#menu {
-    padding: 10px;
+#sortingAlgorithms {
+    padding: 0px;
+}
+
+.selectGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.outerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.selectLabel {
+    font-size: 12pt;
 }
