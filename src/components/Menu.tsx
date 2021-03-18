@@ -21,7 +21,7 @@ export default function Menu({ sortingAlgs, currentAlg, setAlg, resetGrid, rando
                         </div>
                     </div>
                     <div className='pure-button-group' role='group'>
-                        <button id='randomiseButton' className='pure-button' onClick={e => {e.preventDefault(); randomiseData()}}>Randomise data</button>
+                        <button id='randomiseButton' disabled={false} className='pure-button' onClick={e => {e.preventDefault(); randomiseData()}}>Randomise data</button>
                         <button id='visualiseButton' type='submit' className='pure-button pure-button-primary' onClick={e => {e.preventDefault(); visualise()}}>Visualise</button>
                         <button id='resetButton' className='pure-button' onClick={e => {e.preventDefault(); resetGrid()}}>Reset grid</button>
                     </div>

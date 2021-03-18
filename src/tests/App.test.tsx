@@ -1,13 +1,18 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import Menu from '../components/Menu';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import App from '../App';
 
-const menuProps = {
-  sortingAlgs: ['test1', 'test2', 'test3'],
-  currentAlg: 'test1',
-  setAlg: jest.fn()
-}
+beforeEach(() => {
+  render(<App />);
+})
 
-//test('renders Menu component successfully', () => {
-//  render(<Menu { ...menuProps } />);
-//});
+describe('\'Randomise data\' button', () => {
+  it('exists', () => {
+    expect(screen.getByText('Randomise data')).toBeTruthy();
+  });
+  it('is clickable', () => {
+    const button = screen.getByText('Randomise data');
+    expect(button).toBeEnabled();
+  });
+});
