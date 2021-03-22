@@ -11,15 +11,16 @@ function App() {
   let gridHeight = window.innerHeight * 0.8;
   let gridWidth = window.innerWidth * 0.8;
 
-  const initGrid = (): number[] => {
-    return new Array(Math.floor(gridWidth / cellSize)).fill(0);
+  const initGrid = (fillValue: any): number[] => {
+    return new Array(Math.floor(gridWidth / cellSize)).fill(fillValue);
   }
   const initStateArr = (): State[] => {
     return new Array(Math.floor(gridWidth / cellSize)).fill(State.Empty);
   }
 
-  const [gridArr, setGridArr] = useState(initGrid());
+  const [gridArr, setGridArr] = useState(initGrid(0));
   const [stateArr, setStateArr] = useState(initStateArr());
+  const [isRunning, setRunning] = useState(false);
 
   const [speed, setSpeed] = useState(250);
 
@@ -39,7 +40,7 @@ function App() {
 
   const [algorithm, setAlgorithm] = useState(sortingAlgs[0])
 
-  const resetGrid = () => setGridArr(initGrid());
+  const resetGrid = () => setGridArr(initGrid(0));
 
   const randomiseData = () => {
     const newArr = [];
@@ -50,13 +51,14 @@ function App() {
     setGridArr(newArr);
   }
 
-  const visualise = () => {
-    visualiseAlgo(algorithm, gridArr, setGridArr, stateArr, setStateArr, speed);
+  const visualise = async () => {
+    await visualiseAlgo(algorithm, gridArr, setGridArr, stateArr, setStateArr, speed);
+    setRunning(false);
   }
 
   return (
     <div className="App">
-      <Menu sortingAlgs={sortingAlgs} currentAlg={algorithm} setAlg={setAlgorithm} resetGrid={resetGrid} randomiseData={randomiseData} visualise={visualise} speed={speed} setSpeed={setSpeed}/>
+      <Menu sortingAlgs={sortingAlgs} currentAlg={algorithm} setAlg={setAlgorithm} resetGrid={resetGrid} randomiseData={randomiseData} visualise={visualise} speed={speed} setSpeed={setSpeed} isRunning={isRunning} setRunning={setRunning}/>
       <Grid cellSize={cellSize} gridHeight={gridHeight} gridWidth={gridWidth} gridArr={gridArr} setGridArr={setGridArr} stateArr={stateArr} setStateArr={setStateArr}/>
     </div>
   );
