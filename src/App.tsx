@@ -58,8 +58,22 @@ function App() {
 
   return (
     <div className="App">
-      <Menu sortingAlgs={sortingAlgs} currentAlg={algorithm} setAlg={setAlgorithm} resetGrid={resetGrid} randomiseData={randomiseData} visualise={visualise} speed={speed} setSpeed={setSpeed} isRunning={isRunning} setRunning={setRunning}/>
-      <Grid cellSize={cellSize} gridHeight={gridHeight} gridWidth={gridWidth} gridArr={gridArr} setGridArr={setGridArr} stateArr={stateArr} setStateArr={setStateArr}/>
+      <Menu
+        sortingAlgs={sortingAlgs}
+        currentAlg={algorithm} setAlg={setAlgorithm}
+        resetGrid={resetGrid}
+        randomiseData={randomiseData}
+        visualise={visualise}
+        speed={speed} setSpeed={setSpeed}
+        isRunning={isRunning} setRunning={setRunning}
+      />
+      <Grid
+        cellSize={cellSize}
+        gridHeight={gridHeight} gridWidth={gridWidth}
+        gridArr={gridArr} setGridArr={setGridArr}
+        stateArr={stateArr} setStateArr={setStateArr}
+        isRunning={isRunning}
+      />
     </div>
   );
 }

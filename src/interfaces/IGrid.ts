@@ -8,4 +8,5 @@ export interface Grid {
     setGridArr: (newArray: number[]) => void;
     stateArr: State[];
     setStateArr: (newState: State[]) => void;
+    isRunning: boolean;
 }
