@@ -20,7 +20,7 @@ export default async function sort(array: number[], setArray: (newArray: number[
                 j++;
                 stateArr[j] = State.Current;
                 setStateArr([...stateArr]);
-                
+
                 if (array[j] < array[jMin]) {
                     stateArr[jMin] = State.Filled;
                     setStateArr([...stateArr]);
@@ -47,7 +47,7 @@ export default async function sort(array: number[], setArray: (newArray: number[
             console.log(i, jMin);
         }
         stateArr[i] = State.Sorted;
-        
+
         setStateArr([...stateArr]);
         setArray([...array]);
     }
