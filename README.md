@@ -8,3 +8,5 @@ Currently:
   - Selection sort
   - Insertion sort
   - Bubble sort
+  - Merge sort (top-down)
+  - Merge sort (bottom-up)
