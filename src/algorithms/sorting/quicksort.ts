@@ -34,5 +34,5 @@ export default async function sort(array: number[], setArray: (newArray: number[
         return i;
     }
 
-    quicksort(0, array.length - 1);
+    await quicksort(0, array.length - 1);
 }
