@@ -11,8 +11,7 @@ export default function Menu({
   visualise,
   speed,
   setSpeed,
-  isRunning,
-  setRunning
+  isRunning
 }: i.Menu) {
   return (
     <header id="menu">
@@ -69,7 +68,6 @@ export default function Menu({
               className="pure-button pure-button-primary"
               onClick={(e) => {
                 e.preventDefault();
-                setRunning(true);
                 visualise();
               }}
             >

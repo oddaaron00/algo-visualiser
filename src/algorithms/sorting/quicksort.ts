@@ -1,24 +1,38 @@
 import { State } from "../../interfaces/ICell";
 
 export default async function sort(array: number[], setArray: (newArray: number[]) => void, stateArr: State[], setStateArr: (newStateArr: State[]) => void, speed: number) {
-    function quicksort(A: number[], lo: number, hi: number) {
+    async function quicksort(lo: number, hi: number) {
         if (lo < hi) {
-            let p = partition(A, lo, hi);
-            quicksort(A, lo, p - 1);
-            quicksort(A, p + 1, hi);
+            let p = await partition(lo, hi);
+            await quicksort(lo, p - 1);
+            await quicksort(p + 1, hi);
         }
     }
 
-    function partition(A: number[], lo: number, hi: number) {
-        let pivot = A[hi];
+    async function partition(lo: number, hi: number) {
+        let pivot = array[hi];
         let i = lo;
-        for (let j = lo; j <= hi; j++) {
-            if (A[j] < pivot) {
-                [A[i], A[j]] = [A[j], A[i]];
-                i++;
-            }
-        }
-        [A[i], A[hi]] = [A[hi], A[i]];
+        let j = lo;
+        await new Promise<void>(resolve => {
+            const stepInterval = setInterval(() => {
+                if (j < hi + 1) {
+                    if (array[j] < pivot) {
+                        [array[i], array[j]] = [array[j], array[i]];
+                        setArray([...array]);
+                        i++;
+                    }
+                    j++;
+                } else {
+                    resolve();
+                    clearInterval(stepInterval);
+                }
+            }, speed)
+        });
+        console.log(pivot, i, lo, hi);        
+        [array[i], array[hi]] = [array[hi], array[i]];
+        setArray([...array]);
         return i;
     }
+
+    quicksort(0, array.length - 1);
 }

@@ -1,9 +1,10 @@
-import { State } from "../interfaces/ICell";
-import selectionSort from "./sorting/selectionSort";
-import insertionSort from "./sorting/insertionSort";
-import bubbleSort from "./sorting/bubbleSort";
-import mergeSortTopDown from "./sorting/mergeSortTopDown";
-import mergeSortBottomUp from "./sorting/mergeSortBottomUp";
+import { State } from '../interfaces/ICell';
+import selectionSort from './sorting/selectionSort';
+import insertionSort from './sorting/insertionSort';
+import bubbleSort from './sorting/bubbleSort';
+import mergeSortTopDown from './sorting/mergeSortTopDown';
+import mergeSortBottomUp from './sorting/mergeSortBottomUp';
+import quicksort from './sorting/quicksort';
 
 export default async function visualise(
   algorithm: string,
@@ -14,20 +15,23 @@ export default async function visualise(
   speed: number
 ) {
   switch (algorithm) {
-    case "Selection sort":
+    case 'Selection sort':
       await selectionSort(array, setGridArr, stateArr, setStateArr, speed);
       break;
-    case "Insertion sort":
+    case 'Insertion sort':
       await insertionSort(array, setGridArr, stateArr, setStateArr, speed);
       break;
-    case "Bubble sort":
+    case 'Bubble sort':
       await bubbleSort(array, setGridArr, stateArr, setStateArr, speed);
       break;
-    case "Merge sort (top-down)":
+    case 'Merge sort (top-down)':
       await mergeSortTopDown(array, setGridArr, stateArr, setStateArr, speed);
       break;
-    case "Merge sort (bottom-up)":
+    case 'Merge sort (bottom-up)':
       await mergeSortBottomUp(array, setGridArr, stateArr, setStateArr, speed);
+      break;
+    case 'Quicksort':
+      await quicksort(array, setGridArr, stateArr, setStateArr, speed);
       break;
     default:
       break;

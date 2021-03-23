@@ -29,8 +29,8 @@ function App() {
     'Insertion sort',
     'Bubble sort',
     'Merge sort (top-down)',
-    'Merge sort (bottom-up)'
-    //Quicksort
+    'Merge sort (bottom-up)',
+    'Quicksort',
     //Heapsort
     //Counting sort
     //Radix sort
@@ -52,6 +52,7 @@ function App() {
   }
 
   const visualise = async () => {
+    setRunning(true);
     await visualiseAlgo(algorithm, gridArr, setGridArr, stateArr, setStateArr, speed);
     setRunning(false);
   }
@@ -65,7 +66,7 @@ function App() {
         randomiseData={randomiseData}
         visualise={visualise}
         speed={speed} setSpeed={setSpeed}
-        isRunning={isRunning} setRunning={setRunning}
+        isRunning={isRunning}
       />
       <Grid
         cellSize={cellSize}

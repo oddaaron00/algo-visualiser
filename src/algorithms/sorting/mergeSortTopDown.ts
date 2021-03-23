@@ -53,5 +53,4 @@ export default async function sort(array: number[], setArray: (newArray: number[
 
     let sortedArr: number[] = [];
     await TopDownMergeSort(array, sortedArr, array.length);
-    console.log('g')
 }

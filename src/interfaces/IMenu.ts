@@ -8,5 +8,4 @@ export interface Menu {
   speed: number;
   setSpeed: (newSpeed: number) => void;
   isRunning: boolean;
-  setRunning: (newState: boolean) => void;
 }
