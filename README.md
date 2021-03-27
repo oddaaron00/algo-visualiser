@@ -10,3 +10,4 @@ Currently:
   - Bubble sort
   - Merge sort (top-down)
   - Merge sort (bottom-up)
+  - Quicksort
